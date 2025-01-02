@@ -1,10 +1,19 @@
-# Sysdig Inspect Lab
+# Sysdig OSS Packet Capture Collection & Inspection in Stratoshark
+
+The entire lab scenarios are run within an Ubuntu box running on AWS:
+```
+cd Desktop/keys/
+```
+```
+ssh -i "nigel-inspect.pem" ubuntu@ec2-54-72-70-15.eu-west-1.compute.amazonaws.com
+```
+Sending the packet capture from my Linux box to my local workstation:
+```
+scp -i nigel-inspect.pem ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com:/home/ubuntu/<filename>.scap ~/Desktop/keys/
+```
 
 ## Part 1 - Install Sysdig with Basic Filters
 
-We can compare Sysdig Inspect and Tetragon via the below Lab environment: <br/>
-```https://isovalent.com/labs/tetragon-getting-started```
-<br/><br/>
 You can automatically install Sysdig Inspect via the below installer:
 ```
 curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | sudo bash
