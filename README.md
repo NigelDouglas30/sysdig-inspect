@@ -5,7 +5,7 @@ The entire lab scenarios are run within an Ubuntu box running on AWS:
 cd Desktop/keys/
 ```
 ```
-ssh -i "nigel-inspect.pem" ubuntu@ec2-54-72-70-15.eu-west-1.compute.amazonaws.com
+ssh -i "nigel-inspect.pem" ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com
 ```
 Sending the packet capture from my Linux box to my local workstation:
 ```
