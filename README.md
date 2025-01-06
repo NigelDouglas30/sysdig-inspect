@@ -9,7 +9,7 @@ ssh -i "nigel-inspect.pem" ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.co
 ```
 Sending the packet capture from my Linux box to my local workstation:
 ```
-scp -i nigel-inspect.pem ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com:/home/ubuntu/<filename>.scap ~/Desktop/keys/
+scp -i nigel-inspect.pem ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com:/home/ubuntu/xmrig.scap ~/Desktop/captures/
 ```
 
 ## Part 1 - Install Sysdig with Basic Filters
