@@ -355,8 +355,3 @@ cd xmrig-6.16.4
 ```
 ./xmrig -o stratum+tcp://xmr.pool.minergate.com:45700 -u lies@lies.lies -p x -t 2
 ```
-
-```
-kubectl exec -n kube-system -ti daemonset/tetragon -c tetragon -- \
-	tetra getevents -o compact
-```
