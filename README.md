@@ -339,29 +339,21 @@ Testing this in Docker Desktop to see if the existing image [sysdig/sysdig](http
 kubectl apply -f https://raw.githubusercontent.com/nigel-falco/sysdig-inspect/main/sysdig-deployment.yaml
 ```
 
-## Tetragon Stuff
+## Cryptomining Stuff with xmrig
 ```
-kubectl get nodes
+curl -OL https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-linux-static-x64.tar.gz
 ```
-
 ```
-wget https://raw.githubusercontent.com/nigel-falco/sysdig-inspect/refs/heads/main/tetragon.yaml
+tar -xvf xmrig-6.16.4-linux-static-x64.tar.gz
 ```
-
 ```
-helm repo add cilium https://helm.cilium.io
-helm repo update
-helm install tetragon cilium/tetragon \
-  -n kube-system -f tetragon.yaml --version 1.1.0
+cd xmrig-6.16.4
 ```
-
 ```
-kubectl rollout status -n kube-system ds/tetragon -w
+./xmrig --donate-level 8 -o xmr-us-east1.nanopool.org:14433 -u 422skia35WvF9mVq9Z9oCMRtoEunYQ5kHPvRqpH1rGCv1BzD5dUY4cD8wiCMp4KQEYLAN1BuawbUEJE99SNrTv9N9gf2TWC --tls --coin monero
 ```
-
 ```
-wget https://raw.githubusercontent.com/nigel-falco/sysdig-inspect/refs/heads/main/networking.yaml
-kubectl apply -f networking.yaml
+./xmrig -o stratum+tcp://xmr.pool.minergate.com:45700 -u lies@lies.lies -p x -t 2
 ```
 
 ```
