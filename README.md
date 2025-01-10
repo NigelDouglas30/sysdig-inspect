@@ -379,6 +379,10 @@ Cilium
 ```
 curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
 ```
+SCAP Capture (Terminal 1)
+```
+sudo sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host
+```
 Test Container (Terminal 2)
 ```
 kubectl run -it --image busybox busybox
