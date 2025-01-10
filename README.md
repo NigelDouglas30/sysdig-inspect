@@ -354,6 +354,16 @@ kubectl apply -f https://raw.githubusercontent.com/nigel-falco/sysdig-inspect/ma
 ```
 
 ## Setup Kubernetes on Ubuntu
+Kubecolor
+```
+sudo apt install kubecolor
+```
+```
+alias kubectl="kubecolor"
+```
+```
+kubectl get pods -A
+```
 ContainerD
 ```
 curl https://raw.githubusercontent.com/xxradar/install_k8s_ubuntu/main/setup_latest.sh | bash
@@ -368,16 +378,6 @@ kubectl taint node ip-10-0-7-239 node-role.kubernetes.io/control-plane:NoSchedul
 Cilium
 ```
 curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
-```
-Kubecolor
-```
-sudo apt install kubecolor
-```
-```
-alias kubectl="kubecolor"
-```
-```
-kubectl get pods -A
 ```
 Test Container (Terminal 2)
 ```
