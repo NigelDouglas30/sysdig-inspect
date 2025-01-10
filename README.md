@@ -30,6 +30,10 @@ sudo sysdig
 ```
 sudo csysdig
 ```
+```DEPRECATION NOTICE``` for Kubernetes Enrichment in csysdig
+```
+sudo csysdig -k http://localhost:8080
+```
 
 <br/><br/>
 Run a capture for ```5 Seconds``` via the below ```timeout``` commands:
