@@ -339,6 +339,29 @@ Testing this in Docker Desktop to see if the existing image [sysdig/sysdig](http
 kubectl apply -f https://raw.githubusercontent.com/nigel-falco/sysdig-inspect/main/sysdig-deployment.yaml
 ```
 
+## Setup Kubernetes on Ubuntu
+ContainerD
+```
+curl https://raw.githubusercontent.com/xxradar/install_k8s_ubuntu/main/setup_latest.sh | bash
+```
+Cilium
+```
+curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
+```
+
+```
+kubectl run -it --image busybox busybox
+```
+```
+kubectl get nodes
+```
+```
+kubectl taint node ip-10-0-7-239 node-role.kubernetes.io/control-plane:NoSchedule-
+```
+```
+kubectl exec -it busybox -- sh
+```
+
 ## Cryptomining Stuff with xmrig
 ```
 curl -OL https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-linux-static-x64.tar.gz
