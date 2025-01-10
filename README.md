@@ -34,7 +34,10 @@ sudo csysdig
 ```
 sudo csysdig -k http://localhost:8080
 ```
-
+Container-specific capture activity for Stratoshark
+```
+sudo sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host
+```
 <br/><br/>
 Run a capture for ```5 Seconds``` via the below ```timeout``` commands:
 ```
