@@ -381,7 +381,7 @@ curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd
 ```
 SCAP Capture (Terminal 1)
 ```
-sudo sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host
+sudo timeout 10 sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host
 ```
 Test Container (Terminal 2)
 ```
