@@ -385,6 +385,13 @@ sudo timeout 10 sysdig -p "%evt.time %container.name %proc.name %evt.args" conta
 ```
 Test Container (Terminal 2)
 ```
+kubectl apply -f https://raw.githubusercontent.com/nigel-falco/falco-talon-testing/main/dodgy-pod.yaml
+```
+```
+kubectl exec -it dodgy-pod -- bash
+```
+Disregard (rough test)
+```
 kubectl run -it --image busybox busybox
 ```
 ```
