@@ -358,19 +358,20 @@ ContainerD
 ```
 curl https://raw.githubusercontent.com/xxradar/install_k8s_ubuntu/main/setup_latest.sh | bash
 ```
-Cilium
-```
-curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
-```
-
-```
-kubectl run -it --image busybox busybox
-```
+Taints
 ```
 kubectl get nodes
 ```
 ```
 kubectl taint node ip-10-0-7-239 node-role.kubernetes.io/control-plane:NoSchedule-
+```
+Cilium
+```
+curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
+```
+Test Container (Terminal 2)
+```
+kubectl run -it --image busybox busybox
 ```
 ```
 kubectl exec -it busybox -- sh
