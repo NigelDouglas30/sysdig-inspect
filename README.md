@@ -20,11 +20,13 @@ curl -s https://s3.amazonaws.com/download.draios.com/stable/install-sysdig | sud
 ```
 You can run Sysdig with no filters via the below command: <br/>
 Similar to running Wireshark without filters, its impossible to read.
+<br/><br/>
 
+```Sysdig``` is a universal system visibility tool with native support for containers
 ```
 sudo sysdig
 ```
-
+```Csysdig``` is a simple, intuitive, and fully customizable curses UI for sysdig
 ```
 sudo csysdig
 ```
