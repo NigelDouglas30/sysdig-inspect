@@ -369,6 +369,16 @@ Cilium
 ```
 curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd/refs/heads/main/cilium_install.sh | bash
 ```
+Kubecolor
+```
+sudo apt install kubecolor
+```
+```
+alias kubectl="kubecolor"
+```
+```
+kubectl get pods -A
+```
 Test Container (Terminal 2)
 ```
 kubectl run -it --image busybox busybox
