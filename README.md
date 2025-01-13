@@ -5,11 +5,11 @@ The entire lab scenarios are run within an Ubuntu box running on AWS:
 cd Desktop/keys/
 ```
 ```
-ssh -i "nigel-inspect.pem" ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com
+ssh -i "nigel-inspect.pem" ubuntu@ec2-34-240-98-75.eu-west-1.compute.amazonaws.com
 ```
 Sending the packet capture from my Linux box to my local workstation:
 ```
-scp -i nigel-inspect.pem ubuntu@ec2-**-**-**-**.eu-west-1.compute.amazonaws.com:/home/ubuntu/xmrig.scap ~/Desktop/captures/
+scp -i nigel-inspect.pem ubuntu@ec2-34-240-98-75.eu-west-1.compute.amazonaws.com:/home/ubuntu/xmrig.scap ~/Desktop/captures/
 ```
 
 ## Part 1 - Install Sysdig with Basic Filters
@@ -117,17 +117,6 @@ sysdig -r malicious-traffic.scap proc.name=nmap --summary
 
 
 
-This could still be useless, as its missing some context. Mayve you would like to see the ```markdown format``` otuput:
-```
-sysdig --list-markdown
-```
-
-```
-sysdig --list
-```
-
-
-
 On the flip side, I never really learned how to read packets in ```ASCII format```:
 ```
 sysdig -r storefront-capture.scap proc.name=sandbox-agent or proc.name=nmap --print-hex-ascii
@@ -151,10 +140,6 @@ kubectl delete -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 
 ```
 sysdig --help
-```
-
-```
-sysdig --help | grep -a "color"
 ```
 
 ```
@@ -381,7 +366,7 @@ curl https://raw.githubusercontent.com/xxradar/k8s-calico-oss-install-containerd
 ```
 SCAP Capture (Terminal 1)
 ```
-sudo timeout 10 sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host -w xmrigger.scap
+sudo timeout 10 sysdig -p "%evt.time %container.name %proc.name %evt.args" container.name!=host -w xmrig.scap
 ```
 Test Container (Terminal 2)
 ```
@@ -409,4 +394,9 @@ cd xmrig-6.16.4
 ```
 ```
 ./xmrig -o stratum+tcp://xmr.pool.minergate.com:45700 -u lies@lies.lies -p x -t 2
+```
+
+Sending the packet capture from my Linux box to my local workstation:
+```
+scp -i nigel-inspect.pem ubuntu@ec2-34-240-98-75.eu-west-1.compute.amazonaws.com:/home/ubuntu/xmrig.scap ~/Desktop/captures/
 ```
