@@ -217,10 +217,6 @@ Above is the top files by activity, the below is top system calls over a period 
 sysdig -c topscalls.lua
 ```
 
-```
-sysdig -c httplog.lua --color true
-```
-
 ![Screenshot 2024-09-05 at 15 49 17](https://github.com/user-attachments/assets/cbb5c5a4-ae27-45c3-8fa3-533fcc5dc8bb)
 
 Advanced use case to exclude specific file descriptor names:
@@ -399,4 +395,8 @@ cd xmrig-6.16.4
 Sending the packet capture from my Linux box to my local workstation:
 ```
 scp -i nigel-inspect.pem ubuntu@ec2-18-201-250-133.eu-west-1.compute.amazonaws.com:/home/ubuntu/kube-capture.scap ~/Desktop/captures/
+```
+
+```
+kubectl delete pods --all -n kube-system
 ```
