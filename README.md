@@ -354,7 +354,7 @@ Taints
 kubectl get nodes
 ```
 ```
-kubectl taint node ip-10-0-7-239 node-role.kubernetes.io/control-plane:NoSchedule-
+kubectl taint node $(kubectl get nodes --selector='node-role.kubernetes.io/control-plane' -o jsonpath='{.items[0].metadata.name}') node-role.kubernetes.io/control-plane:NoSchedule-
 ```
 Cilium
 ```
