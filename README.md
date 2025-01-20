@@ -332,11 +332,11 @@ This configuration introduces a non-existent command in the ```args``` section, 
 kubect apply -f https://raw.githubusercontent.com/NigelDouglas30/sysdig-inspect/refs/heads/main/nginx.yaml
 ```
 
-1. Invalid Command (args):
+1. Invalid Command (args):<br/>
 The args field specifies an invalid command (invalid-command), which nginx cannot execute, causing the container to crash. <br/><br/>
-2. Resource Requests and Limits:
+2. Resource Requests and Limits:<br/>
 The resources section is included to demonstrate proper configuration, though it does not affect the CrashLoopBackOff state in this case.<br/><br/>
-3. Crash Behavior:
+3. Crash Behavior:<br/>
 The pod will try to restart the nginx container repeatedly due to the invalid command, resulting in a CrashLoopBackOff status.
 
 ## Part 10 - Kubernetes Deployment Manifest
