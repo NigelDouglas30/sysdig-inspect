@@ -9,7 +9,7 @@ spec:
   - name: nginx
     image: nginx:latest
     args:
-    - invalid-command # Deliberate invalid argument
+    - invalid-command
     resources:
       requests:
         memory: "64Mi"
