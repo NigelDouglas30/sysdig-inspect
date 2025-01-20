@@ -9,12 +9,13 @@ spec:
   - name: nginx
     image: nginx:latest
     command:
-    - sh
+    - /bin/sh
     - -c
     - |
       # Start nginx (triggers system calls)
-      nginx -g "daemon off;"
-      # Intentionally cause a failure
+      nginx -g "daemon off;" &
+      # Intentionally cause a failure after a short delay
+      sleep 2
       exit 1
     resources:
       requests:
