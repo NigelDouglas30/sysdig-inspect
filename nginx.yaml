@@ -8,8 +8,14 @@ spec:
   containers:
   - name: nginx
     image: nginx:latest
-    args:
-    - invalid-command
+    command:
+    - sh
+    - -c
+    - |
+      # Start nginx (triggers system calls)
+      nginx -g "daemon off;"
+      # Intentionally cause a failure
+      exit 1
     resources:
       requests:
         memory: "64Mi"
@@ -19,3 +25,4 @@ spec:
         cpu: "500m"
     ports:
     - containerPort: 80
+  restartPolicy: Always
