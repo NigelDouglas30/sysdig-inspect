@@ -326,18 +326,17 @@ docker run -d -v /local/path/to/captures:/captures -p8080:3000 sysdig/sysdig-ins
 Sysdig Inspect will be available in your browser at ```http://localhost:8080```
 
 ### CrashLoopBackOff Behaviour
-Below is an example of a Kubernetes pod YAML file that creates an nginx workload deliberately configured to result in a CrashLoopBackOff state. <br/>
-This configuration introduces a non-existent command in the ```args``` section, causing the container to fail during startup.
+Below is an example of a Kubernetes pod YAML file that creates an nginx workload deliberately configured to result in a CrashLoopBackOff state. This configuration introduces a non-existent command in the ```args``` section, causing the container to fail during startup.
 ```
 kubect apply -f https://raw.githubusercontent.com/NigelDouglas30/sysdig-inspect/refs/heads/main/nginx.yaml
 ```
 
 1. Invalid Command (args):<br/>
-The args field specifies an invalid command (invalid-command), which nginx cannot execute, causing the container to crash. <br/><br/>
+The args field specifies an invalid command (```invalid-command```), which nginx cannot execute, causing the container to crash. <br/><br/>
 2. Resource Requests and Limits:<br/>
-The resources section is included to demonstrate proper configuration, though it does not affect the CrashLoopBackOff state in this case.<br/><br/>
+The resources section is included to demonstrate proper configuration, though it does not affect the ```CrashLoopBackOff``` state in this case.<br/><br/>
 3. Crash Behavior:<br/>
-The pod will try to restart the nginx container repeatedly due to the invalid command, resulting in a CrashLoopBackOff status.
+The pod will try to restart the ```nginx``` container repeatedly due to the invalid command, resulting in a CrashLoopBackOff status.
 
 ## Part 10 - Kubernetes Deployment Manifest
 
