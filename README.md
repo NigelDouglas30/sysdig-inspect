@@ -328,7 +328,7 @@ Sysdig Inspect will be available in your browser at ```http://localhost:8080```
 ### CrashLoopBackOff Behaviour
 Below is an example of a Kubernetes pod YAML file that creates an nginx workload deliberately configured to result in a CrashLoopBackOff state. This configuration introduces a non-existent command in the ```args``` section, causing the container to fail during startup.
 ```
-kubect apply -f https://raw.githubusercontent.com/NigelDouglas30/sysdig-inspect/refs/heads/main/nginx.yaml
+kubectl apply -f https://raw.githubusercontent.com/NigelDouglas30/sysdig-inspect/refs/heads/main/nginx.yaml
 ```
 
 1. Invalid Command (args):<br/>
