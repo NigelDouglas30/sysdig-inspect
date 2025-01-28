@@ -195,8 +195,11 @@ sysdig -p"%evt.arg.name" proc.name=cat and evt.type=open
 
 Compare and contrast the info collect from the Modern eBPF probe:
 ```
-sysdig proc.name=cat --modern-bpf
+sudo sysdig proc.name=cat --modern-bpf
 ```
+
+![modern-bpf](https://github.com/user-attachments/assets/ce519f6e-31d4-46c8-8aad-ddfb46627dba)
+
 
 ## Part 6 - Chisels
 
