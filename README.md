@@ -44,6 +44,11 @@ Run a capture for ```5 Seconds``` via the below ```timeout``` commands:
 sudo timeout 5 sysdig -w nigel-capture.scap
 ```
 
+Loading a process executable in ```memfd``` (fileless malware):
+```
+exec /proc/self/fd/$(echo -ne '#!/bin/sh\necho Hello from memfd' | tee /proc/self/fd/$(memfd_create my_exec) | chmod +x /proc/self/fd/$(memfd_create my_exec))
+```
+
 You can read the content of the ```nigel-capture.scap``` file with the below command:
 ```
 sudo sysdig -r nigel-capture.scap
