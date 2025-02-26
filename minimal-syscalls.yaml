@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minimal-syscalls-pod
+  labels:
+    app: restricted-container
+spec:
+  containers:
+    - name: secure-container
+      image: busybox:latest
+      command: ["sleep", "3600"]
+      securityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true  # Prevents modification of system files
+        runAsNonRoot: true
+        capabilities:
+          drop: ["ALL"]  # Drop all Linux capabilities
+        seccompProfile:
+          type: RuntimeDefault  # Uses Kubernetes default restricted seccomp profile
