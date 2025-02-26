@@ -5,11 +5,11 @@ The entire lab scenarios are run within an Ubuntu box running on AWS:
 cd Desktop/keys/
 ```
 ```
-ssh -i "nigel-inspect.pem" ubuntu@ec2-18-201-250-133.eu-west-1.compute.amazonaws.com
+ssh -i "nigel-inspect.pem" ubuntu@ec2-54-195-17-170.eu-west-1.compute.amazonaws.com
 ```
 Sending the packet capture from my Linux box to my local workstation:
 ```
-scp -i nigel-inspect.pem ubuntu@ec2-18-201-250-133.eu-west-1.compute.amazonaws.com:/home/ubuntu/kube-capture.scap ~/Desktop/captures/
+scp -i nigel-inspect.pem ubuntu@ec2-54-195-17-170.eu-west-1.compute.amazonaws.com:/home/ubuntu/kubernetes.scap ~/Desktop/captures/
 ```
 
 ## Part 1 - Install Sysdig with Basic Filters
@@ -414,7 +414,7 @@ cd xmrig-6.16.4
 
 Sending the packet capture from my Linux box to my local workstation:
 ```
-scp -i nigel-inspect.pem ubuntu@ec2-18-201-250-133.eu-west-1.compute.amazonaws.com:/home/ubuntu/kube-capture.scap ~/Desktop/captures/
+scp -i nigel-inspect.pem ubuntu@ec2-54-195-17-170.eu-west-1.compute.amazonaws.com:/home/ubuntu/kubernetes.scap ~/Desktop/captures/
 ```
 
 ```
